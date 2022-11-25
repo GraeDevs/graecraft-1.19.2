@@ -39,7 +39,7 @@ public class RaccoonEntity extends PassiveEntity implements IAnimatable {
     public static DefaultAttributeContainer.Builder setAttributes() {
         return TameableEntity.createMobAttributes()
                 .add(EntityAttributes.GENERIC_MAX_HEALTH, 25.00)
-                .add(EntityAttributes.GENERIC_MOVEMENT_SPEED, 0.07f);
+                .add(EntityAttributes.GENERIC_MOVEMENT_SPEED, 0.1f);
     }
 
     @Override
