@@ -1,0 +1,9 @@
+{
+  "type": "minecraft:smelting",
+  "ingredient": {
+    "item": "graecraft:raw_raccoon"
+  },
+  "result": "graecraft:cooked_raccoon",
+  "experience": 0.2,
+  "cookingtime": 200
+}
