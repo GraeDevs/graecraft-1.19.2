@@ -5,6 +5,8 @@ import net.fabricmc.fabric.api.object.builder.v1.entity.FabricDefaultAttributeRe
 import net.graedevs.graecraft.entity.ModEntities;
 import net.graedevs.graecraft.entity.custom.RaccoonEntity;
 import net.graedevs.graecraft.item.ModItems;
+import net.graedevs.graecraft.util.MobAttributes;
+import net.graedevs.graecraft.world.gen.ModWorldGen;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import software.bernie.geckolib3.GeckoLib;
@@ -17,6 +19,8 @@ public class Graecraft implements ModInitializer {
 	@Override
 	public void onInitialize() {
 		ModItems.registerModItems();
+		ModWorldGen.generateWorldGen();
+		MobAttributes.init();
 
 		FabricDefaultAttributeRegistry.register(ModEntities.RACCOON, RaccoonEntity.setAttributes());
 		GeckoLib.initialize();

@@ -183,6 +183,59 @@
 					}
 				}
 			}
+		},
+		"animation.raccoon.sit": {
+			"loop": true,
+			"animation_length": 1,
+			"bones": {
+				"Head": {
+					"position": {
+						"vector": [0, 6, 5]
+					}
+				},
+				"Body": {
+					"rotation": {
+						"vector": [-62.5, 0, 0]
+					},
+					"position": {
+						"vector": [0, 1, -5]
+					}
+				},
+				"Tail": {
+					"rotation": {
+						"vector": [77.5, 0, 0]
+					},
+					"position": {
+						"vector": [0, 1, 8]
+					}
+				},
+				"FrontLeftLeg": {
+					"rotation": {
+						"vector": [-28.66235, 8.31087, 18.25612]
+					},
+					"position": {
+						"vector": [0, 1, 1]
+					}
+				},
+				"FrontRightLeg": {
+					"rotation": {
+						"vector": [-24.78507, -12.31064, -24.78507]
+					},
+					"position": {
+						"vector": [0, 1, 1]
+					}
+				},
+				"BackRightLeg": {
+					"rotation": {
+						"vector": [55, 0, 0]
+					}
+				},
+				"BackLeftLeg": {
+					"rotation": {
+						"vector": [55, 0, 0]
+					}
+				}
+			}
 		}
 	},
 	"geckolib_format_version": 2

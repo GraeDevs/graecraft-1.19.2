@@ -4,17 +4,17 @@
   "version": "${version}",
 
   "name": "Graecraft",
-  "description": "This is an example description! Tell everyone what your mod is about!",
+  "description": "A content mod that generally adds random things. In the future it may have a solid theme.",
   "authors": [
-    "Me!"
+    "GraeDevs"
   ],
   "contact": {
     "homepage": "https://fabricmc.net/",
-    "sources": "https://github.com/FabricMC/fabric-example-mod"
+    "sources": "https://github.com/SirRenk/graecraft-1.19.2"
   },
 
   "license": "MIT License",
-  "icon": "assets/modid/icon.png",
+  "icon": "assets/graecraft/icon.png",
 
   "environment": "*",
   "entrypoints": {
