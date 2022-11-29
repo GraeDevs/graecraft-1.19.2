@@ -63,11 +63,10 @@ public class RaccoonEntity extends TameableEntity implements IAnimatable {
         this.goalSelector.add(0, new SwimGoal(this));
         this.goalSelector.add(1, new SitGoal(this));
         this.goalSelector.add(2, new FollowOwnerGoal(this, 1.0, 10.0f, 2.0f, false));
-        this.goalSelector.add(3, new WanderAroundPointOfInterestGoal(this, 0.75f, false));
-        this.goalSelector.add(4, new WanderAroundFarGoal(this, 0.75f, 1));
-        this.goalSelector.add(5, new LookAroundGoal(this));
-        this.goalSelector.add(6, new LookAtEntityGoal(this, PlayerEntity.class, 8.0f));
-        this.goalSelector.add(7, new GoToVillageGoal(this, 25));
+        this.goalSelector.add(3, new WanderAroundFarGoal(this, 0.75f, 1));
+        this.goalSelector.add(4, new LookAroundGoal(this));
+        this.goalSelector.add(5, new LookAtEntityGoal(this, PlayerEntity.class, 8.0f));
+        this.goalSelector.add(6, new GoToVillageGoal(this, 25));
 
         this.targetSelector.add(1, new AnimalMateGoal(this, 1.0));
     }
