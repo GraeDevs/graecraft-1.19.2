@@ -14,7 +14,7 @@ import software.bernie.geckolib3.renderers.geo.GeoEntityRenderer;
 public class PenguinRenderer extends GeoEntityRenderer<PenguinEntity> {
     public PenguinRenderer(EntityRendererFactory.Context renderManager) {
         super(renderManager, new PenguinModel());
-        this.shadowRadius = 0.3f;
+        this.shadowRadius = 0.2f;
     }
 
     @Override
