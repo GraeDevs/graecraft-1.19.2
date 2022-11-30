@@ -53,10 +53,10 @@ public class PenguinEntity extends TameableEntity implements IAnimatable {
     protected void initGoals() {
         this.goalSelector.add(0, new SwimGoal(this));
         this.goalSelector.add(1, new SitGoal(this));
-        this.goalSelector.add(4, new WanderAroundFarGoal(this, 0.09f, 1));
+        this.goalSelector.add(4, new WanderAroundFarGoal(this, 0.3f, 1));
         this.goalSelector.add(5, new LookAroundGoal(this));
         this.goalSelector.add(6, new LookAtEntityGoal(this, PlayerEntity.class, 8.0f));
-        this.goalSelector.add(7, new FollowOwnerGoal(this, 0.34, 2.0f, 15.0f, false));
+        this.goalSelector.add(7, new FollowOwnerGoal(this, 0.3, 2.0f, 15.0f, false));
         this.targetSelector.add(2, new AnimalMateGoal(this, 1.0));
     }
 

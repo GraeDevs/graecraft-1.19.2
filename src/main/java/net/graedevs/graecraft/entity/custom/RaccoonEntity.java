@@ -19,6 +19,7 @@ import net.minecraft.item.Item;
 import net.minecraft.item.ItemStack;
 import net.minecraft.item.Items;
 import net.minecraft.nbt.NbtCompound;
+import net.minecraft.recipe.Ingredient;
 import net.minecraft.scoreboard.AbstractTeam;
 import net.minecraft.server.world.ServerWorld;
 import net.minecraft.sound.SoundEvent;
@@ -56,14 +57,14 @@ public class RaccoonEntity extends TameableEntity implements IAnimatable {
                 .add(EntityAttributes.GENERIC_MAX_HEALTH, 20.0D)
                 .add(EntityAttributes.GENERIC_ATTACK_DAMAGE, 8.0f)
                 .add(EntityAttributes.GENERIC_ATTACK_SPEED, 2.0f)
-                .add(EntityAttributes.GENERIC_MOVEMENT_SPEED, 0.35f);
+                .add(EntityAttributes.GENERIC_MOVEMENT_SPEED, 0.45f);
     }
 
     protected void initGoals() {
         this.goalSelector.add(0, new SwimGoal(this));
         this.goalSelector.add(1, new SitGoal(this));
-        this.goalSelector.add(2, new FollowOwnerGoal(this, 0.5, 2.0f, 10.0f, false));
-        this.goalSelector.add(3, new WanderAroundFarGoal(this, 0.1f, 1));
+        this.goalSelector.add(2, new FollowOwnerGoal(this, 0.4, 2.0f, 10.0f, false));
+        this.goalSelector.add(3, new WanderAroundFarGoal(this, 0.4f, 1));
         this.goalSelector.add(4, new LookAroundGoal(this));
         this.goalSelector.add(5, new LookAtEntityGoal(this, PlayerEntity.class, 8.0f));
         this.goalSelector.add(6, new GoToVillageGoal(this, 25));
