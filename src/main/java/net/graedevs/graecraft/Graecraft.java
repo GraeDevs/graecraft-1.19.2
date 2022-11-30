@@ -22,7 +22,6 @@ public class Graecraft implements ModInitializer {
 		ModWorldGen.generateWorldGen();
 		MobAttributes.init();
 
-		FabricDefaultAttributeRegistry.register(ModEntities.RACCOON, RaccoonEntity.setAttributes());
 		GeckoLib.initialize();
 	}
 }

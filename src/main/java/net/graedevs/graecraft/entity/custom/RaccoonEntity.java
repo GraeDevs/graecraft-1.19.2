@@ -211,7 +211,7 @@ public class RaccoonEntity extends TameableEntity implements IAnimatable {
     }
 
     public boolean canBeLeashedBy(PlayerEntity player) {
-        return false;
+        return true;
     }
 
     @Nullable

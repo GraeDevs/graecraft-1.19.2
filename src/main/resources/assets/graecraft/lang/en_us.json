@@ -1,6 +1,8 @@
 {
   "item.graecraft.raw_raccoon": "Raw Raccoon",
   "item.graecraft.cooked_raccoon": "Cooked Raccoon",
+  "entity.graecraft.raccoon": "Raccoon",
+  "entity.graecraft.penguin": "Penguin",
 
   "itemGroup.graecraft.graecraft": "Graecraft Tab"
 }

@@ -16,6 +16,7 @@ import net.minecraft.item.Item;
 import net.minecraft.item.ItemStack;
 import net.minecraft.item.Items;
 import net.minecraft.nbt.NbtCompound;
+import net.minecraft.scoreboard.AbstractTeam;
 import net.minecraft.server.world.ServerWorld;
 import net.minecraft.util.ActionResult;
 import net.minecraft.util.Hand;
@@ -164,5 +165,14 @@ public class PenguinEntity extends TameableEntity implements IAnimatable {
     public void readCustomDataFromNbt(NbtCompound nbt) {
         super.readCustomDataFromNbt(nbt);
         this.dataTracker.set(SITTING, nbt.getBoolean("isSitting"));
+    }
+
+    @Override
+    public AbstractTeam getScoreboardTeam() {
+        return super.getScoreboardTeam();
+    }
+
+    public boolean canBeLeashedBy(PlayerEntity player) {
+        return true;
     }
 }
