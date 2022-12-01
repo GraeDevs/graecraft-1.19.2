@@ -1,9 +1,10 @@
 package net.graedevs.graecraft.entity.custom;
 
-
+import com.mojang.datafixers.types.templates.List;
 import net.graedevs.graecraft.entity.ModEntities;
 import net.minecraft.block.BlockState;
 import net.minecraft.entity.EntityType;
+import net.minecraft.entity.ai.TargetPredicate;
 import net.minecraft.entity.ai.goal.*;
 import net.minecraft.entity.attribute.DefaultAttributeContainer;
 import net.minecraft.entity.attribute.EntityAttributes;
@@ -11,7 +12,7 @@ import net.minecraft.entity.damage.DamageSource;
 import net.minecraft.entity.data.DataTracker;
 import net.minecraft.entity.data.TrackedData;
 import net.minecraft.entity.data.TrackedDataHandlerRegistry;
-import net.minecraft.entity.passive.AnimalEntity;
+import net.minecraft.entity.passive.IronGolemEntity;
 import net.minecraft.entity.passive.PassiveEntity;
 import net.minecraft.entity.passive.TameableEntity;
 import net.minecraft.entity.player.PlayerEntity;
@@ -19,7 +20,6 @@ import net.minecraft.item.Item;
 import net.minecraft.item.ItemStack;
 import net.minecraft.item.Items;
 import net.minecraft.nbt.NbtCompound;
-import net.minecraft.recipe.Ingredient;
 import net.minecraft.scoreboard.AbstractTeam;
 import net.minecraft.server.world.ServerWorld;
 import net.minecraft.sound.SoundEvent;
@@ -38,6 +38,7 @@ import software.bernie.geckolib3.core.event.predicate.AnimationEvent;
 import software.bernie.geckolib3.core.manager.AnimationData;
 import software.bernie.geckolib3.core.manager.AnimationFactory;
 import software.bernie.geckolib3.util.GeckoLibUtil;
+
 
 public class RaccoonEntity extends TameableEntity implements IAnimatable {
     private AnimationFactory factory = GeckoLibUtil.createFactory(this);
@@ -63,11 +64,12 @@ public class RaccoonEntity extends TameableEntity implements IAnimatable {
     protected void initGoals() {
         this.goalSelector.add(0, new SwimGoal(this));
         this.goalSelector.add(1, new SitGoal(this));
-        this.goalSelector.add(2, new FollowOwnerGoal(this, 0.4, 2.0f, 10.0f, false));
-        this.goalSelector.add(3, new WanderAroundFarGoal(this, 0.4f, 1));
+        this.goalSelector.add(2, new FollowOwnerGoal(this, 0.45, 1.0f, 10.0f, false));
+        this.goalSelector.add(3, new WanderAroundFarGoal(this, 0.45f, 1));
         this.goalSelector.add(4, new LookAroundGoal(this));
         this.goalSelector.add(5, new LookAtEntityGoal(this, PlayerEntity.class, 8.0f));
         this.goalSelector.add(6, new GoToVillageGoal(this, 25));
+        this.goalSelector.add(7, new FollowParentGoal(this, 0.45));
 
         this.targetSelector.add(1, new AnimalMateGoal(this, 1.0));
     }
@@ -152,7 +154,7 @@ public class RaccoonEntity extends TameableEntity implements IAnimatable {
                     this.navigation.recalculatePath();
                     this.setTarget(null);
                     this.world.sendEntityStatus(this, (byte)7);
-                    setSit(true);
+                    setSit(false);
                 }
 
                 return ActionResult.SUCCESS;
